@@ -5,7 +5,7 @@ require('dotenv').config();
 const port = process.env.PORT || 3000;
 const io = require('socket.io')(port);
 
-const { log } = require('./middleware/log.js')
+const log = require('./middleware/log.js')
 
 const caps = io.of('/caps');
 
