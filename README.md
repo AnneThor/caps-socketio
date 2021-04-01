@@ -1,6 +1,14 @@
 # Code Academy Parcel Service (CAPS): Event Driven Parcel Delivery Management System
 Socket.io event driven app that represents live tracking of a parcel delivery service; the CAPS app is the socket server that manages communication between vendors and drivers.
 
+**Client Apps**
+
+**[Vendors](https://github.com/AnneThor/caps-vendor/blob/main/README.md)**
+
+**[Drivers](https://github.com/AnneThor/caps-driver/blob/main/README.md)**
+
+**[Express Post Route for Pickups](https://github.com/AnneThor/caps-express/blob/main/README.md)**
+
 ## Author: Anne Thorsteinson
 
 **[Tests](https://github.com/AnneThor/caps-socketio/actions)**
