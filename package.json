@@ -1,0 +1,24 @@
+{
+  "name": "caps-socketio",
+  "version": "1.0.0",
+  "description": "CAPS app server socket",
+  "main": "caps.js",
+  "scripts": {
+    "start": "nodemon cap.js",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnneThor/caps-socketio.git"
+  },
+  "author": "Anne Thorsteinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnneThor/caps-socketio/issues"
+  },
+  "homepage": "https://github.com/AnneThor/caps-socketio#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "socket.io": "^2.4.1"
+  }
+}
