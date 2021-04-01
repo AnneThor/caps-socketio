@@ -4,7 +4,7 @@ function log(payload, event) {
         time: new Date().getTime().toString(),
         payload: payload
     }
-    console.log("Event", obj);
+    console.log("EVENT", obj);
 }
 
 module.exports = log;

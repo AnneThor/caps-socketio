@@ -17,24 +17,24 @@ caps.on('connection', socket => {
   })
 
   socket.on('pickup', (payload, event) => {
-    log(payload, event);
-    socket.broadcast.emit('pickup', payload, event);
+    log(payload, { event: 'pickup' });
+    socket.broadcast.emit('pickup', payload);
   });
 
   // this should only go back to pickup driver
-  socket.on('in-transit', (payload, event, driver) => {
-    log(payload, event);
-    io.of('caps').emit('in-transit', payload, event);
-    let storeId = payload.storeId;
-    socket.to(storeId).emit('in-transit', payload, event);
+  socket.on('in-transit', (payload, driver) => {
+    log(payload, { event: 'in-transit' });
+    io.of('caps').emit('in-transit', payload);
+    let store = payload.store;
+    socket.to(store).emit('in-transit', payload);
   });
 
   // this should only go back to vendor
-  socket.on('delivered', (payload, event) => {
-    log(payload, event);
-    let storeId = payload.storeId;
+  socket.on('delivered', (payload) => {
+    log(payload, { event: 'delivered' });
+    let store = payload.store;
     // socket.broadcast.emit('delivered', payload, event);
-    socket.to(storeId).emit('delivered', payload, event);
+    socket.to(store).emit('delivered', payload);
   });
 
 })

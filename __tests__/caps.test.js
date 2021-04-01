@@ -9,7 +9,7 @@ describe("CAPS functionality", () => {
     storeId: '123456',
     orderID: '456789',
     customerName: 'Jane Doe',
-    address: '21 Elm Street',
+    address: '1428 Elm Street',
   };
 
   let pickup = { 'event': 'pickup' };
