@@ -5,6 +5,8 @@ require('dotenv').config();
 const port = process.env.PORT || 3000;
 const io = require('socket.io')(port);
 
+const { log } = require('./middleware/log.js')
+
 const caps = io.of('/caps');
 
 caps.on('connection', socket => {
@@ -36,14 +38,3 @@ caps.on('connection', socket => {
   });
 
 })
-
-function log(payload, event) {
-    let obj = {
-        event: event,
-        time: new Date().getTime().toString(),
-        payload: payload
-    }
-    console.log("Event", obj);
-}
-
-module.exports = log;
