@@ -5,7 +5,9 @@ require('dotenv').config();
 const server = require('http').createServer();
 const io = require('socket.io')(server);
 
-io.on('connection', client => {
+const caps = io.of('/caps');
+
+caps.on('connection', client => {
     
     socket.on('pickup', log);
     socket.on('in-transit', log);
