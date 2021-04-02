@@ -21,20 +21,18 @@ caps.on('connection', socket => {
     socket.broadcast.emit('pickup', payload);
   });
 
-  // this should only go back to pickup driver
+  // this should only go back to vendor/store
   socket.on('in-transit', (payload, driver) => {
     log(payload, { event: 'in-transit' });
-    io.of('caps').emit('in-transit', payload);
     let store = payload.store;
-    socket.to(store).emit('in-transit', payload);
+    io.of('caps').to(driver).to(store).emit('in-transit', payload);
   });
 
   // this should only go back to vendor
   socket.on('delivered', (payload) => {
     log(payload, { event: 'delivered' });
     let store = payload.store;
-    // socket.broadcast.emit('delivered', payload, event);
-    socket.to(store).emit('delivered', payload);
+    io.of('caps').to(store).emit('delivered', payload);
   });
 
 })
